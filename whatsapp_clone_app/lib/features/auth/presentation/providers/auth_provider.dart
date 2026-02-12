@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:whatsapp_clone_app/core/router/app_router.dart';
 import 'package:whatsapp_clone_app/features/auth/data/repositories/auth_repository.dart';
 

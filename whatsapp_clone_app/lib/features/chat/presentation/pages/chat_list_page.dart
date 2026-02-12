@@ -4,36 +4,27 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:whatsapp_clone_app/core/router/app_router.dart';
 import 'package:whatsapp_clone_app/core/theme/app_theme.dart';
-import 'package:whatsapp_clone_app/features/chat/data/models/chat_contact_model.dart';
 import 'package:whatsapp_clone_app/features/chat/presentation/providers/chat_provider.dart';
-
 
 class ChatListPage extends ConsumerWidget {
   const ChatListPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return StreamBuilder<List<ChatContactModel>>(
-      stream: ref.watch(chatContactsStreamProvider.stream),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(
-            child: CircularProgressIndicator(
-              color: AppColors.tealGreen,
-            ),
-          );
-        }
+    final chatContactsAsync = ref.watch(chatContactsStreamProvider);
 
-        if (!snapshot.hasData || snapshot.data!.isEmpty) {
+    return chatContactsAsync.when(
+      data: (chatContacts) {
+        if (chatContacts.isEmpty) {
           return const Center(
             child: Text('No chats yet. Start a conversation!'),
           );
         }
 
         return ListView.builder(
-          itemCount: snapshot.data!.length,
+          itemCount: chatContacts.length,
           itemBuilder: (context, index) {
-            final chatContact = snapshot.data![index];
+            final chatContact = chatContacts[index];
             return Column(
               children: [
                 InkWell(
@@ -99,6 +90,12 @@ class ChatListPage extends ConsumerWidget {
           },
         );
       },
+      loading: () => const Center(
+        child: CircularProgressIndicator(color: AppColors.tealGreen),
+      ),
+      error: (error, stack) => Center(
+        child: Text('Error: $error'),
+      ),
     );
   }
 }

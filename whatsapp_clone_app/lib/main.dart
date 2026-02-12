@@ -7,26 +7,23 @@ import 'package:whatsapp_clone_app/core/router/app_router.dart';
 import 'package:whatsapp_clone_app/core/theme/app_theme.dart';
 import 'package:whatsapp_clone_app/firebase_options.dart';
 
-
-void main()  async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  
+
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.light,
     ),
   );
-  
+
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -36,7 +33,7 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(routerProvider);
-    
+
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
