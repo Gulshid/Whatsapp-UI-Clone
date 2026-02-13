@@ -33,62 +33,22 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.8
-  # State Management
-  flutter_riverpod: ^3.0.3
-  riverpod_annotation: ^3.0.3
-  
-  # Firebase
-  firebase_core: ^4.4.0
-  firebase_auth: ^6.1.4
-  cloud_firestore: ^6.1.2
-  firebase_storage: ^13.0.6
-  firebase_messaging: ^16.1.1
-  
-  # UI & Responsiveness
+  flutter_riverpod: ^2.4.9
   flutter_screenutil: ^5.9.0
+  intl: ^0.18.1
+  cupertino_icons: ^1.0.2
+  image_picker: ^1.0.4
+  emoji_picker_flutter: ^1.6.3
+  audioplayers: ^5.2.1
+  record: ^5.0.4
   cached_network_image: ^3.3.0
   flutter_svg: ^2.0.9
-  google_fonts: ^6.1.0
-  
-  # Functionality
-  image_picker: ^1.0.5
-  # file_picker: ^6.2.1
-  permission_handler: ^12.0.1
-  path_provider: ^2.1.1
-  uuid: ^4.2.1
-  intl: ^0.20.2
-  timeago: ^3.6.0
-  emoji_picker_flutter: ^4.4.0
-  url_launcher: ^6.2.2
-  share_plus: ^12.0.1
-  record_linux: ^1.3.0
-  record_platform_interface: ^1.5.0
-  
-  # Audio/Video
-  audioplayers: ^6.5.1
-  video_player: ^2.8.1
-  camera: ^0.11.2+1
-  record: ^6.2.0
-  just_audio: ^0.10.5
-  
-  # Utils
-  flutter_contacts: ^1.1.7+1
-  country_picker: ^2.0.23
-  pin_code_fields: ^8.0.1
-  story_view: ^0.16.0
-  swipe_to: ^1.0.6
-  badges: ^3.1.2
-  photo_view: ^0.15.0
-  flutter_sound: ^9.2.13
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  riverpod_generator: ^3.0.3
-  build_runner: ^2.4.7
-  riverpod_lint: ^3.0.3
+  riverpod_lint: ^2.6.5
 
   
   # The "flutter_lints" package below contains a set of recommended lints to
